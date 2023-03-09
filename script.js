@@ -75,7 +75,7 @@ var displayRestaurants = function (restaurants) {
 };
 
 var getTheaters = function (lat, long) {
-  // Add zip code to googleMapsUrl and as parameter for getRestaurants function
+  // Add zip code to googleMapsUrl and as parameter for getTheaters function
   var googleMapsUrl =
     // Need to figure out how to parse location (latLong) variable into lat and long and replace location within below url
     "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=20&type=restaurant&key=AIzaSyCmdB_Ov1gxNFIiPerrkI8HQZ3j018SxF8";
@@ -93,20 +93,20 @@ var getTheaters = function (lat, long) {
     });
 };
 
-var displayTheaters = function (restaurants) {
-  if (restaurants.length == 0) {
+var displayTheaters = function (theaters) {
+  if (theaters.length == 0) {
     cardUl.textContent = "No Theaters available in your area!";
     return;
   }
 };
 
+// On Click to Input Zip Code, Pass to Zip to Geo Conversion Function
 searchBtn.addEventListener("click", function (event) {
   event.preventDefault();
   var zipCode = searchInput.value;
-  // console.log(zipCode);
+  console.log(zipCode);
   if (zipCode) {
     convertZipToGeo(zipCode);
-    // getRestaurants(zipCode);
   } else if (zipCode == "") {
     alert("Please submit zip code");
   } else {
