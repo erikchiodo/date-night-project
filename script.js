@@ -113,3 +113,4 @@ searchBtn.addEventListener("click", function (event) {
     alert("Please re-submit zip code");
   }
 });
+
