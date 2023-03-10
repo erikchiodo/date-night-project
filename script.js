@@ -166,7 +166,7 @@ async function fetchAndShowTheatres() {
         const theaterObj = {
           name: t.name,
           address1: t.vicinity,
-          address2: (t.plus_code && t.plus_code.compound_code) || "",
+          address2: (""),
           postalCode: zipCode,
           types: t.types,
           rating: t.rating || 0,
@@ -207,7 +207,7 @@ async function fetchAndShowRestaurants() {
         const restaurantObj = {
           name: t.name,
           address:
-            ((t.plus_code && t.plus_code.compound_code) || "") +
+            ("") +
             "\n" +
             t.vicinity,
           rating: t.rating || 0,
