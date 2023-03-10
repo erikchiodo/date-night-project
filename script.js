@@ -225,7 +225,7 @@ async function fetchAndShowRestaurants() {
   });
   showCardsUl();
 }
-//apend elemnet to HTML
+//append elemnets to HTML
 // create HTML for movie card
 function createMovieCard(movie) {
   const li = document.createElement("li");
