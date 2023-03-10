@@ -103,6 +103,7 @@ function createSelectButton() {
   return selectButton;
 }
 
+
 // Function is inputting zipCode (collected from user input) and converting into location (lat and long codes)
 async function convertZipToGeo(zipCode) {
   const geoCodeURL =

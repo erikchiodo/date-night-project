@@ -47,7 +47,70 @@
       <ul
         id="cardsUl"
         class="max-w-[500px] mt-10 mx-auto flex flex-wrap gap-5 lg:max-w-[800px] border p-4 rounded-md hidden"
-      ></ul>
+
+      
+        <li class="movie-card p-4 border rounded-md max-w-[350px] w-full">
+          <p class="text-sm">place name</p>
+          <h3 class="mb-3 mt-2 text-xl">Movie Name</h3>
+          <p>Popularity</p>
+          <p>rating</p>
+          <p>runtime</p>
+          <p>cast</p>
+          <p>genre</p>
+          <button
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
+          >
+            select
+          </button>
+        </li>
+        <li class="theatre-card p-4 border rounded-md grow basis-[350px]">
+          <p class="text-sm">place name</p>
+          <h3 class="mb-3 mt-2 text-xl">theatre Name</h3>
+          <p>address 1</p>
+          <p>address 2</p>
+          <p>city</p>
+          <p>state</p>
+          <p>postal code</p>
+          <p>distance in miles</p>
+          <p>Phone number</p>
+          <button
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
+          >
+            select
+          </button>
+        </li>
+        <li class="theatre-card p-4 border rounded-md grow basis-[350px]">
+          <h3 class="mb-3 mt-2 text-xl">name</h3>
+          <p>formatted_address</p>
+          <p>opening_hours</p>
+          <p>rating</p>
+          <p>types</p>
+          <button
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
+          >
+            select
+          </button>
+        </li>
+        <li
+          class="summary-card theatre-card p-4 border rounded-md grow basis-[350px]"
+        >
+          <h3 class="text-xl mt-2 mb-3">Summary</h3>
+          <p>Movie</p>
+          <p>Show time</p>
+          <hr class="max-w-1/2 my-2" />
+          <p>Theatre name</p>
+          <p>Theatre address</p>
+          <hr class="max-w-1/2 my-2" />
+          <p>restaurant names</p>
+          <p>Address</p>
+          <p>Phone number</p>
+        </li>
+      </ul>
+      <script
+        async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmdB_Ov1gxNFIiPerrkI8HQZ3j018SxF8&libraries=places&callback=initMap"
+      ></script>
+
       <script src="./script.js"></script>
     </div>
   </body>
