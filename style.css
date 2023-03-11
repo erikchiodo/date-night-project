@@ -14,14 +14,14 @@ h1,h2,h3, .summary-card .font-bold {
   }
 
   button[type=submit]:hover, button:hover{
-    background-color: #e3c9b1;
+    background-color: #4F2C2F;
 
   }
 
 
   button[type=submit], button{
     color: black;
-    background-color: #e3c9b1 !important;
+    background-color: #4F2C2F!important;
 
   }
 .movie-card, .theatre-card, .restaurant-card{
@@ -40,4 +40,8 @@ h1,h2,h3, .summary-card .font-bold {
 
   #cardsUl{
     border:none;
-  }
+ }   
+
+ .summary-card{
+    background-color: whitesmoke;
+ }
