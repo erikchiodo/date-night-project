@@ -10,7 +10,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-   
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -21,13 +20,12 @@
         },
       };
     </script>
-     <link rel="stylesheet" href="style.css">
-    <title>Date Night App</title>
+    <title>Movies App</title>
   </head>
 
-  <body class=" font-poppins">
-    <div class="container mx-auto  min-h-[100vh] p-2">
-      <h1 class="text-3xl text-center my-4">Date Planner</h1>
+  <body class="bg-gray-50 font-poppins">
+    <div class="container mx-auto bg-white min-h-[100vh] p-2">
+      <h1 class="text-3xl text-center my-4">Movie Planner</h1>
       <form
         id="searchForm"
         class="p-5 border max-w-[500px] mt-10 mx-auto rounded-md flex flex-col gap-2"
@@ -37,11 +35,11 @@
           id="searchInput"
           placeholder="Enter ZIP code"
           class="border p-4 rounded-md outline-none"
+          required
         />
         <button
           type="submit"
-          class="border rounded-md p-4 cursor-pointer ease-in duration-100"
-          id="search-btn"
+          class="border rounded-md p-4 cursor-pointer hover:bg-black hover:text-white ease-in duration-100"
         >
           Search
         </button>
@@ -49,7 +47,8 @@
       <ul
         id="cardsUl"
         class="max-w-[500px] mt-10 mx-auto flex flex-wrap gap-5 lg:max-w-[800px] border p-4 rounded-md hidden"
-      >
+
+      
         <li class="movie-card p-4 border rounded-md max-w-[350px] w-full">
           <p class="text-sm">place name</p>
           <h3 class="mb-3 mt-2 text-xl">Movie Name</h3>
@@ -59,7 +58,7 @@
           <p>cast</p>
           <p>genre</p>
           <button
-            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md ease-in duration-100"
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
           >
             select
           </button>
@@ -75,7 +74,7 @@
           <p>distance in miles</p>
           <p>Phone number</p>
           <button
-            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md ease-in duration-100"
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
           >
             select
           </button>
@@ -87,7 +86,7 @@
           <p>rating</p>
           <p>types</p>
           <button
-            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md  ease-in duration-100"
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
           >
             select
           </button>
@@ -107,6 +106,11 @@
           <p>Phone number</p>
         </li>
       </ul>
+      <script
+        async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmdB_Ov1gxNFIiPerrkI8HQZ3j018SxF8&libraries=places&callback=initMap"
+      ></script>
+
       <script src="./script.js"></script>
     </div>
   </body>
