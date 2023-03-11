@@ -20,12 +20,14 @@
         },
       };
     </script>
+    <link rel="stylesheet" href="style.css">
+
     <title>Movies App</title>
   </head>
 
-  <body class="bg-gray-50 font-poppins">
-    <div class="container mx-auto bg-white min-h-[100vh] p-2">
-      <h1 class="text-3xl text-center my-4">Movie Planner</h1>
+  <body class="font-poppins">
+    <div class="container mx-auto  min-h-[100vh] p-2">
+      <h1 class="text-3xl text-center my-4">Binge</h1>
       <form
         id="searchForm"
         class="p-5 border max-w-[500px] mt-10 mx-auto rounded-md flex flex-col gap-2"
@@ -44,7 +46,11 @@
           Search
         </button>
       </form>
+
+    
+      <iframe id="gmap" style="display:none;" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d96718.62430390518!2d-74.0396596!3d40.7519721!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1678504156280!5m2!1sen!2sus"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <ul
+
         id="cardsUl"
         class="max-w-[500px] mt-10 mx-auto flex flex-wrap gap-5 lg:max-w-[800px] border p-4 rounded-md hidden"
 
@@ -58,7 +64,7 @@
           <p>cast</p>
           <p>genre</p>
           <button
-            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md ease-in duration-100"
           >
             select
           </button>
@@ -86,7 +92,7 @@
           <p>rating</p>
           <p>types</p>
           <button
-            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md  ease-in duration-100"
           >
             select
           </button>

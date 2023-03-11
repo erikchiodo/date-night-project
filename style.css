@@ -1,9 +1,13 @@
 body{
     background-color: #8f7a7d;
+    background-image: url('bg.png');
+    background-size: cover;
 }
-
-h1 {
+h1{
     font-size: 72px;
+}
+h1,h2,h3, .summary-card .font-bold {
+   
     background: -webkit-linear-gradient(#5e514f, #2e292a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -12,4 +16,28 @@ h1 {
   button[type=submit]:hover, button:hover{
     background-color: #e3c9b1;
 
+  }
+
+
+  button[type=submit], button{
+    color: black;
+    background-color: #e3c9b1 !important;
+
+  }
+.movie-card, .theatre-card, .restaurant-card{
+    background-color: whitesmoke;
+}
+  #gmap{
+    margin: 10px auto;
+    width: 500px;
+    height: 200px;
+  }
+
+
+  h2{
+    text-transform: uppercase;
+  }
+
+  #cardsUl{
+    border:none;
   }

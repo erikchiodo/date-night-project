@@ -92,11 +92,10 @@ function createSelectButton() {
     "text-lg",
     "cursor-pointer",
     "rounded-md",
-    "hover:bg-black",
-    "hover:text-white",
+    
     "ease-in",
     "duration-100",
-    "bg-green-600",
+   
     "text-white"
   );
   selectButton.innerText = "Select";
@@ -123,6 +122,7 @@ async function convertZipToGeo(zipCode) {
 }
 async function handleFormSubmit(event) {
   event.preventDefault();
+  document.querySelector("#gmap").style.display = "block";
   zipCode = searchInput.value;
   let geoData = await convertZipToGeo(zipCode);
   lat = geoData.lat;
