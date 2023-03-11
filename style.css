@@ -1,0 +1,15 @@
+body{
+    background-color: #8f7a7d;
+}
+
+h1 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#5e514f, #2e292a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  button[type=submit]:hover, button:hover{
+    background-color: #e3c9b1;
+
+  }
