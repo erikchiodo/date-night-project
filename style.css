@@ -3,11 +3,11 @@ body{
     background-size: cover;
 }
 h1{
-    font-size: 72px;
+    font-size: 80px;
 }
-h1,h2,h3, .summary-card .font-bold {
+h1,h2,h3,h4 .summary-card .font-bold {
    
-    background: -webkit-linear-gradient(#5e514f, #2e292a);
+    background: -webkit-linear-gradient(#5e514f, hsl(348, 6%, 17%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -43,4 +43,6 @@ h1,h2,h3, .summary-card .font-bold {
 
  .summary-card{
     background-color: whitesmoke;
+    text-align: center; 
+    zoom: 0.8 ; 
  }
