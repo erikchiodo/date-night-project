@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -20,12 +21,14 @@
         },
       };
     </script>
+    <link rel="stylesheet" href="style.css">
+
     <title>Movies App</title>
   </head>
 
-  <body class="bg-gray-50 font-poppins">
-    <div class="container mx-auto bg-white min-h-[100vh] p-2">
-      <h1 class="text-3xl text-center my-4">Movie Planner</h1>
+  <body class="font-poppins">
+    <div class="container mx-auto  min-h-[100vh] p-2">
+      <h1 class="text-7xl text-center my-4 b-2">ReelDine</h1>
       <form
         id="searchForm"
         class="p-5 border max-w-[500px] mt-10 mx-auto rounded-md flex flex-col gap-2"
@@ -44,7 +47,10 @@
           Search
         </button>
       </form>
+
+  
       <ul
+
         id="cardsUl"
         class="max-w-[500px] mt-10 mx-auto flex flex-wrap gap-5 lg:max-w-[800px] border p-4 rounded-md hidden"
 
@@ -58,7 +64,7 @@
           <p>cast</p>
           <p>genre</p>
           <button
-            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md ease-in duration-100"
           >
             select
           </button>
@@ -86,15 +92,16 @@
           <p>rating</p>
           <p>types</p>
           <button
-            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md hover:bg-black hover:text-white ease-in duration-100"
+            class="border px-4 py-2 mt-3 text-lg cursor-pointer rounded-md  ease-in duration-100"
           >
             select
           </button>
         </li>
         <li
-          class="summary-card theatre-card p-4 border rounded-md grow basis-[350px]"
+          class="summary-card theatre-card border rounded-md grow basis-[350px]"
         >
           <h3 class="text-xl mt-2 mb-3">Summary</h3>
+          <h4 class="text-xl mt-2 mb-3">Enjoy your night</h4>
           <p>Movie</p>
           <p>Show time</p>
           <hr class="max-w-1/2 my-2" />
