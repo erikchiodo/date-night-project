@@ -128,6 +128,7 @@ async function handleFormSubmit(event) {
   lat = geoData.lat;
   lon = geoData.lon;
   searchInput.value = "";
+  this.classList.add("hidden");
   fetchAndShowMovies();
 }
 
