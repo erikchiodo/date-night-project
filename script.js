@@ -122,7 +122,6 @@ async function convertZipToGeo(zipCode) {
 }
 async function handleFormSubmit(event) {
   event.preventDefault();
-  document.querySelector("#gmap").style.display = "block";
   zipCode = searchInput.value;
   let geoData = await convertZipToGeo(zipCode);
   lat = geoData.lat;
@@ -146,6 +145,7 @@ function fetchAndShowMovies() {
 // loop through theatres and create card element for each theatre
 async function fetchAndShowTheatres() {
   hideCardsUl();
+  document.getElementById("searchForm").style.display="none";
   cardsUl.innerHTML =
     "<h2 class='text-center my-4 font-bold text-2xl basis-full'>Select a theatre</h2>";
 
@@ -238,7 +238,8 @@ function createMovieCard(movie) {
     "basis-[350px]",
     "grow"
   );
-  li.innerHTML = `<p class="text-sm">Place Name: ${movie.placeName}</p>
+  li.innerHTML = `<i class="fas fa-film"></i>
+  <p class="text-sm">Place Name: ${movie.placeName}</p>
   <h3 class="mb-3 font-bold mt-2 text-xl">${movie.movieName}</h3>
   <p>Popularity: ${movie.popularity}</p>
   <p>Rating: ${movie.rating}</p>
@@ -267,7 +268,7 @@ function createTheatreCard(theatre) {
     "basis-[350px]",
     "grow"
   );
-  li.innerHTML = `<h3 class="mb-3 mt-2 font-bold text-xl">${theatre.name}</h3>
+  li.innerHTML =`<iclass="fa-solid fa-ticket"></i><h3 class="mb-3 mt-2 font-bold text-xl">${theatre.name}</h3>
   <p>Address 1: ${theatre.address1}</p>
   <p>Address 2: ${theatre.address2}</p>
   <p>Postal Code: ${theatre.postalCode}</p>
@@ -295,7 +296,7 @@ function createRestaurantCard(restaurant) {
     "basis-[350px]",
     "grow"
   );
-  li.innerHTML = `<h3 class="mb-3 mt-2 font-bold text-xl">${
+  li.innerHTML = `<i class="fas fa-utensils"></i><h3 class="mb-3 mt-2 font-bold text-xl">${
     restaurant.name
   }</h3>
   <p>Address: ${restaurant.address}</p>
@@ -323,12 +324,14 @@ function showSummary() {
     "p-4",
     "border",
     "rounded-md",
-    "basis-[350px]",
+    "basis-[250px]", 
     "grow"
   );
+  //added h4 element with subtitle
   li.innerHTML = `<h3 class="text-3xl mt-2 mb-3">Summary</h3>
+  <h3 class="text-l mt-2 mb-3">Here are the details. Enjoy your night!</h3> 
   <p class="text-sm mt-2 font-bold">Movie Info</p>
-  <p>${summary.movieName}</p>
+  <p><i class="fas fa-film"></i> ${summary.movieName}</p>
   <p>${summary.movieCast}</p>
   <p>Rating: ${summary.movieRating}</p>
   <hr class="max-w-1/2 my-2">
@@ -338,7 +341,7 @@ function showSummary() {
   <p>Rating: ${summary.rating}</p>
   <hr class="max-w-1/2 my-2">
   <p class="text-sm mt-2 font-bold">Restaurant Info</p>
-  <p>${summary.restaurantName}</p>
+  <p><i class="fas fa-utensils"></i> ${summary.restaurantName}</p>
   <p>${summary.restaurantAddress}</p>
   <p>Rating: ${summary.restaurantRating}</p>`;
   cardsUl.append(li);

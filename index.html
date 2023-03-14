@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -27,7 +28,7 @@
 
   <body class="font-poppins">
     <div class="container mx-auto  min-h-[100vh] p-2">
-      <h1 class="text-3xl text-center my-4">Binge</h1>
+      <h1 class="text-7xl text-center my-4 b-2">ReelDine</h1>
       <form
         id="searchForm"
         class="p-5 border max-w-[500px] mt-10 mx-auto rounded-md flex flex-col gap-2"
@@ -47,8 +48,7 @@
         </button>
       </form>
 
-    
-      <iframe id="gmap" style="display:none;" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d96718.62430390518!2d-74.0396596!3d40.7519721!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1678504156280!5m2!1sen!2sus"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
       <ul
 
         id="cardsUl"
@@ -98,9 +98,10 @@
           </button>
         </li>
         <li
-          class="summary-card theatre-card p-4 border rounded-md grow basis-[350px]"
+          class="summary-card theatre-card border rounded-md grow basis-[350px]"
         >
           <h3 class="text-xl mt-2 mb-3">Summary</h3>
+          <h4 class="text-xl mt-2 mb-3">Enjoy your night</h4>
           <p>Movie</p>
           <p>Show time</p>
           <hr class="max-w-1/2 my-2" />
