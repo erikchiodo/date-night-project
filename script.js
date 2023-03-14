@@ -53,11 +53,18 @@ var getRestaurants = function (lat, long) {
   // Add zip code to googleMapsUrl and as parameter for getRestaurants function
   var googleMapsUrl =
     // Need to figure out how to parse location (latLong) variable into lat and long and replace location within below url
+
+    //Working Link: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.0676906%2C-73.4386466&radius=500&key=AIzaSyCmdB_Ov1gxNFIiPerrkI8HQZ3j018SxF8&type=restaurant
+    //Generated Link: https://corsproxy.io/?https%3A%2F%2Fmaps.googleapis.com%2Fmaps%2Fapi%2Fplace%2Fnearbysearch%2Fjson%3Flocation%3D41.0676906%2C-73.4386466%26radius%3D500%26key%3DAIzaSyCmdB_Ov1gxNFIiPerrkI8HQZ3j018SxF8%26type%3Drestaurant
     "https://corsproxy.io/?https%3A%2F%2Fmaps.googleapis.com%2Fmaps%2Fapi%2Fplace%2Fnearbysearch%2Fjson%3Flocation%3D" +
     lat +
     "%2C" +
     long +
-    "%26radius%3D300%26type%3Drestaurant%26key%3DAIzaSyCmdB_Ov1gxNFIiPerrkI8HQZ3j018SxF8";
+    "%26radius%3D500%26key%3DAIzaSyCmdB_Ov1gxNFIiPerrkI8HQZ3j018SxF8%26type%3Drestaurant";
+
+  console.log(googleMapsUrl);
+  console.log(typeof lat);
+  console.log(typeof long);
 
   fetch(googleMapsUrl)
     .then(function (response) {
