@@ -135,7 +135,6 @@ function fetchAndShowMovies() {
 async function fetchAndShowTheatres() {
   hideCardsUl();
   cardsUl.innerHTML = "<h2 class='title'>Select a theatre</h2>";
-  
   const gMapURL =
     "https://corsproxy.io/?https%3A%2F%2Fmaps.googleapis.com%2Fmaps%2Fapi%2Fplace%2Fnearbysearch%2Fjson%3Flocation%3D" +
     lat +
