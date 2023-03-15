@@ -63,7 +63,7 @@ GIVEN I am presented with a list of restaurants
 WHEN I hit "Select"
 THEN I am redirected to a Summary of my selected items.
 
-## Screenshots
+## Preview
 =======
 
 
@@ -72,30 +72,7 @@ The following video shows the web application appearance and functionality once 
 
 ![deployed app](/images/MovieNightPlannerDemo.gif)
 
-First, the user is presented with a landing page
-<hr>
-![Landing page on starter section](/images/image1.png)
-
-When they click "Let's plan" user is presented with a screen where they can input their zip code
-
-![Form section](/images/image2.png)
 
 
-When they hit "Submit", they are presented with list of available movies within the area
 
-![Select movie section](/images/image3.png)
-
-After they select a movie, a list of theaters where the movies are playing is displayed
-
-![Select theater](/images/image4.png)
-
-Once they select a theater, they are presented with list of restaurants
-
-![Select restaurant](/images/image5.png)
-
-Once they've selected a restaurants, they shown a summary of the selections the user had made.
-
-![Summary](/images/image6.png)
-
-=======
 
