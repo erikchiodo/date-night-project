@@ -8,8 +8,8 @@ Creating an app that finds a movie and restaurant in your area for the perfect d
 The goal of this project was to work with a team to create a real-world front-end application that you’ll be able to showcase to potential employers. In our app we used a combination of HTML, CSS, and Javascript and leveraged two Google APIs (GeoCode & Google Maps). See Screenshots below for a visual walkthrough of our application.
 
 ## Table of Contents
-* [User Story](#User stories)
-* [Acceptance Criteria](#Acceptance Criteria)
+* [User Story](#User-stories)
+* [Acceptance Criteria](#Acceptance-Criteria)
 * [Installation](#installation)
 * [Preview](#preview)
 * [Links](#links)
