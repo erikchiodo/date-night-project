@@ -2,6 +2,7 @@
 
 ## Description
 
+
 Creating an app that finds a movie and restaurant in your area for the perfect date night :)
 
 The goal of this project was to work with a team to create a real-world front-end application that you’ll be able to showcase to potential employers. In our app we used a combination of HTML, CSS, and Javascript and leveraged two Google APIs (GeoCode & Google Maps). See Screenshots below for a visual walkthrough of our application.
@@ -65,24 +66,36 @@ THEN I am redirected to a Summary of my selected items.
 ## Screenshots
 =======
 
-First, the user is presented with a screen where they can input their zip code
 
-![Screen Shot 2023-03-14 at 11 26 39 AM](https://user-images.githubusercontent.com/122952630/225052176-08d4d85c-6230-4b38-b80b-f66b54d66bbe.png)
+The following video shows the web application appearance and functionality once deployed:
 
-When they hit "Submit", they are presented with list of available movies
 
-![Screen Shot 2023-03-14 at 11 27 01 AM](https://user-images.githubusercontent.com/122952630/225052432-eb2a0d86-3141-40ce-91e1-2b2b6c3e5650.png)
+![deployed app](/images/MovieNightPlannerDemo.gif)
+
+First, the user is presented with a landing page
+<hr>
+![Landing page on starter section](/images/image1.png)
+
+When they click "Let's plan" user is presented with a screen where they can input their zip code
+
+![Form section](/images/image2.png)
+
+
+When they hit "Submit", they are presented with list of available movies within the area
+
+![Select movie section](/images/image3.png)
 
 After they select a movie, a list of theaters where the movies are playing is displayed
 
-![Screen Shot 2023-03-14 at 11 27 13 AM](https://user-images.githubusercontent.com/122952630/225053134-8e6f886c-cd60-4f65-a3c9-9f99fd420a6a.png)
+![Select theater](/images/image4.png)
 
 Once they select a theater, they are presented with list of restaurants
 
-![Screen Shot 2023-03-14 at 11 27 24 AM](https://user-images.githubusercontent.com/122952630/225053439-d84e30a2-d3e8-4046-aa9b-0a0f493f80d7.png)
+![Select restaurant](/images/image5.png)
 
 Once they've selected a restaurants, they shown a summary of the selections the user had made.
 
-![Screen Shot 2023-03-14 at 11 27 47 AM](https://user-images.githubusercontent.com/122952630/225053660-0e58b6ac-d435-4034-a206-ed9a2cb07761.png)
+![Summary](/images/image6.png)
 
 =======
+
