@@ -1,13 +1,13 @@
-// const FANDANGO_API_KEY = "AIzaSyCmdB_Ov1gxNFIiPerrkI8HQZ3j018SxF8" awaiting activation or need to find replacment api;
+
 const GOOGLE_API_KEY = "AIzaSyCmdB_Ov1gxNFIiPerrkI8HQZ3j018SxF8";
 const cardsUl = document.getElementById("cardsUl");
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
+const startBtn = document.getElementById("startBtn");
+const landingSection = document.getElementById("landingSection");
 
 let lat, lon;
 let zipCode = null;
-
-
 
 const summary = {
   movieName: "",
@@ -18,9 +18,10 @@ const summary = {
   theatreRating: "",
   restaurantName: "",
   restaurantAddress: "",
-  restaurantPhoneNumber: "",
+ 
 };
-//dummy info for testing
+
+// dummy info for testing
 const movies = [
   {
     placeName: "Los Angeles",
@@ -84,21 +85,7 @@ function hideCardsUl() {
 
 function createSelectButton() {
   const selectButton = document.createElement("button");
-  selectButton.classList.add(
-    "border",
-    "px-4",
-    "py-2",
-    "mt-3",
-    "text-lg",
-    "cursor-pointer",
-    "rounded-md",
-    "hover:bg-black",
-    "hover:text-white",
-    "ease-in",
-    "duration-100",
-    "bg-green-600",
-    "text-white"
-  );
+  selectButton.classList.add("btn", "shadow-large");
   selectButton.innerText = "Select";
   return selectButton;
 }
@@ -111,8 +98,8 @@ async function convertZipToGeo(zipCode) {
     zipCode;
   let lat, lon;
   try {
-    var res = await fetch(geoCodeURL);
-    var data = await res.json();
+    const res = await fetch(geoCodeURL);
+    const data = await res.json();
     lat = data.results[0].geometry.location.lat;
     lon = data.results[0].geometry.location.lng;
   } catch (error) {
@@ -121,6 +108,7 @@ async function convertZipToGeo(zipCode) {
   }
   return { lat, lon };
 }
+
 async function handleFormSubmit(event) {
   event.preventDefault();
   zipCode = searchInput.value;
@@ -136,8 +124,7 @@ async function handleFormSubmit(event) {
 //fetching 
 // loop through movies and create card element for each movie
 function fetchAndShowMovies() {
-  cardsUl.innerHTML =
-    "<h2 class='text-center my-4 font-bold text-2xl basis-full'>Select a Movie</h2>";
+  cardsUl.innerHTML = "<h2 class='title'>Select a Movie</h2>";
   movies.forEach((movie) => {
     cardsUl.append(createMovieCard(movie));
   });
@@ -147,9 +134,8 @@ function fetchAndShowMovies() {
 // loop through theatres and create card element for each theatre
 async function fetchAndShowTheatres() {
   hideCardsUl();
-  cardsUl.innerHTML =
-    "<h2 class='text-center my-4 font-bold text-2xl basis-full'>Select a theatre</h2>";
-
+  cardsUl.innerHTML = "<h2 class='title'>Select a theatre</h2>";
+  
   const gMapURL =
     "https://corsproxy.io/?https%3A%2F%2Fmaps.googleapis.com%2Fmaps%2Fapi%2Fplace%2Fnearbysearch%2Fjson%3Flocation%3D" +
     lat +
@@ -190,8 +176,7 @@ async function fetchAndShowTheatres() {
 // loop through restaurants and create card element for each restaurant
 async function fetchAndShowRestaurants() {
   hideCardsUl();
-  cardsUl.innerHTML =
-    "<h2 class='text-center my-4 font-bold text-2xl basis-full'>Select a Restaurant</h2>";
+  cardsUl.innerHTML = "<h2 class='title'>Select a Restaurant</h2>";
   const gMapURL =
     "https://corsproxy.io/?https%3A%2F%2Fmaps.googleapis.com%2Fmaps%2Fapi%2Fplace%2Fnearbysearch%2Fjson%3Flocation%3D" +
     lat +
@@ -231,21 +216,16 @@ async function fetchAndShowRestaurants() {
 // create HTML for movie card
 function createMovieCard(movie) {
   const li = document.createElement("li");
-  li.classList.add(
-    "movie-card",
-    "p-4",
-    "border",
-    "rounded-md",
-    "basis-[350px]",
-    "grow"
-  );
-  li.innerHTML = `<p class="text-sm">Place Name: ${movie.placeName}</p>
-  <h3 class="mb-3 font-bold mt-2 text-xl">${movie.movieName}</h3>
+  li.classList.add("movie-card", "card-li");
+  li.innerHTML = `<i class="fa-sharp fa-solid fa-film"></i>`;
+  li.innerHTML += `<p>Place Name: ${movie.placeName}</p>
+  <h3>${movie.movieName}</h3>
   <p>Popularity: ${movie.popularity}</p>
   <p>Rating: ${movie.rating}</p>
   <p>Runtime: ${movie.runtime}</p>
   <p>Cast: ${movie.cast.join(", ")}</p>
   <p>Genre: ${movie.genre.join(", ")}</p>`;
+  //select button- movie
   const selectButton = createSelectButton();
   selectButton.addEventListener("click", async () => {
     summary.movieName = movie.movieName;
@@ -260,20 +240,15 @@ function createMovieCard(movie) {
 // create HTML elements for theatre card
 function createTheatreCard(theatre) {
   const li = document.createElement("li");
-  li.classList.add(
-    "theatre-card",
-    "p-4",
-    "border",
-    "rounded-md",
-    "basis-[350px]",
-    "grow"
-  );
-  li.innerHTML = `<h3 class="mb-3 mt-2 font-bold text-xl">${theatre.name}</h3>
+  li.classList.add("theatre-card", "card-li");
+  li.innerHTML = `<i class="fa-solid fa-location-pin"></i>`;
+  li.innerHTML += `<h3>${theatre.name}</h3>
   <p>Address 1: ${theatre.address1}</p>
   <p>Address 2: ${theatre.address2}</p>
   <p>Postal Code: ${theatre.postalCode}</p>
   <p>Rating: ${theatre.rating}</p>
   <p>Total User Ratings: ${theatre.totalUserRating}</p>`;
+  // select button for theaters
   const selectButton = createSelectButton();
   selectButton.addEventListener("click", async () => {
     summary.theatreAddress = theatre.address1 + "\n" + theatre.address2;
@@ -288,21 +263,14 @@ function createTheatreCard(theatre) {
 // creates HTML element for restaurant card
 function createRestaurantCard(restaurant) {
   const li = document.createElement("li");
-  li.classList.add(
-    "restaurant-card",
-    "p-4",
-    "border",
-    "rounded-md",
-    "basis-[350px]",
-    "grow"
-  );
-  li.innerHTML = `<h3 class="mb-3 mt-2 font-bold text-xl">${
-    restaurant.name
-  }</h3>
+  li.classList.add("restaurant-card", "card-li");
+  li.innerHTML = `<i class="fa-solid fa-utensils"></i>`;
+  li.innerHTML += `<h3>${restaurant.name}</h3>
   <p>Address: ${restaurant.address}</p>
   <p>Total User Rating: ${restaurant.totalUserRating}</p>
   <p>Rating: ${restaurant.rating}</p>
   <p>Types: ${restaurant.types.join(", ")}</p>`;
+  //create select button for restaurant
   const selectButton = createSelectButton();
   selectButton.addEventListener("click", () => {
     summary.restaurantAddress = restaurant.address;
@@ -314,37 +282,45 @@ function createRestaurantCard(restaurant) {
   return li;
 }
 
-// clear cardUl innerhtml and show the summary
+//clear cardUl innerhtml and show the summary
 function showSummary() {
   hideCardsUl();
   cardsUl.innerHTML = "";
   const li = document.createElement("li");
-  li.classList.add(
-    "summary-card",
-    "p-4",
-    "border",
-    "rounded-md",
-    "basis-[350px]",
-    "grow"
-  );
-  li.innerHTML = `<h3 class="text-3xl mt-2 mb-3">Summary</h3>
-  <p class="text-sm mt-2 font-bold">Movie Info</p>
+  li.classList.add("summary-card", "card-li");
+  li.innerHTML = `<h3 class="text-3xl mt-2 mb-3 font-bold text-center">Summary</h3>
+  <p>Here are the details. Enjoy your night!</p>
+  <p class="subtitle"><i class="fa-sharp fa-solid fa-film"></i> Movie Info</p>
   <p>${summary.movieName}</p>
   <p>${summary.movieCast}</p>
-  <p>Rating: ${summary.movieRating}</p>
-  <hr class="max-w-1/2 my-2">
-  <p class="text-sm mt-2 font-bold">Theatre Info</p>
+  <p>Rating: ${summary.movieRating || 0}</p>
+  <hr class="h-rule">
+  <p class="subtitle"><i class="fa-solid fa-location-pin"></i> Theatre Info</p>
   <p>${summary.theatreName}</p>
   <p>${summary.theatreAddress}</p>
-  <p>Rating: ${summary.rating}</p>
-  <hr class="max-w-1/2 my-2">
-  <p class="text-sm mt-2 font-bold">Restaurant Info</p>
+  <p>Rating: ${summary.rating || 0}</p>
+  <hr class="h-rule">
+  <p class="subtitle"><i class="fa-solid fa-utensils"></i> Restaurant Info</p>
   <p>${summary.restaurantName}</p>
   <p>${summary.restaurantAddress}</p>
-  <p>Rating: ${summary.restaurantRating}</p>`;
+  <p>Rating: ${summary.restaurantRating || 0}</p>`;
   cardsUl.append(li);
+  const btn = document.createElement("btn");
+  btn.classList.add("search-again", "btn");
+  btn.innerText = "Start a new search";
+  btn.addEventListener("click", () => {
+    searchForm.classList.remove("hidden");
+    hideCardsUl();
+  });
+  cardsUl.append(btn);
   showCardsUl();
 }
 
+// hide landing section 
+function hideLandingSection() {
+  landingSection.classList.add("hidden");
+  searchForm.classList.remove("hidden");
+}
 
 searchForm.addEventListener("submit", handleFormSubmit);
+startBtn.addEventListener("click", hideLandingSection);
