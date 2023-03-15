@@ -81,7 +81,7 @@ The following video shows the web application appearance and functionality once 
 ## Links
 
 
-[URL of the deployed application]()
+Link to deployed App: https://erikchiodo.github.io/date-night-project/
 
 [URL of the GitHub repository]()
 
