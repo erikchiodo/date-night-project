@@ -7,7 +7,16 @@ Creating an app that finds a movie and restaurant in your area for the perfect d
 
 The goal of this project was to work with a team to create a real-world front-end application that you’ll be able to showcase to potential employers. In our app we used a combination of HTML, CSS, and Javascript and leveraged two Google APIs (GeoCode & Google Maps). See Screenshots below for a visual walkthrough of our application.
 
+## Table of Contents
+* [User Story](#User_stories)
+* [Acceptance Criteria](#Acceptance_Criteria)
+* [Installation](#installation)
+* [Preview](#preview)
+* [Links](#links)
+* [License](#license)
+
 ## User Stories
+<hr>
 
 AS A user
 I WANT to pick a movie/theater/restaurant based on zip code
@@ -63,14 +72,30 @@ GIVEN I am presented with a list of restaurants
 WHEN I hit "Select"
 THEN I am redirected to a Summary of my selected items.
 
+## Installation
+<hr>
+
+Upload the application files to a webserver.
+
 ## Preview
-=======
+<hr>
 
 
 The following video shows the web application appearance and functionality once deployed:
 
 
 ![deployed app](/images/MovieNightPlannerDemo.gif)
+
+
+## Links
+<hr>
+
+[URL of the deployed application]()
+
+[URL of the GitHub repository]()
+
+## License
+<hr>
 
 
 
