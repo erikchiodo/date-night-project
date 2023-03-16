@@ -83,7 +83,7 @@ The following video shows the web application appearance and functionality once 
 
 Link to deployed App: https://erikchiodo.github.io/date-night-project/
 
-[URL of the GitHub repository]()
+Link to github repo: https://github.com/erikchiodo/date-night-project
 
 
 
